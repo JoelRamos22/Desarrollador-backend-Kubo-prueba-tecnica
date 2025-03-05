@@ -1,0 +1,31 @@
+{
+  "name": "desarrollador-backend-kubo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoelRamos22/Desarrollador-backend-Kubo-prueba-tecnica.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoelRamos22/Desarrollador-backend-Kubo-prueba-tecnica/issues"
+  },
+  "homepage": "https://github.com/JoelRamos22/Desarrollador-backend-Kubo-prueba-tecnica#readme",
+  "description": "",
+  "dependencies": {
+    "@libsql/client": "^0.14.0",
+    "@prisma/client": "^6.4.1",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "nodemon": "^3.1.9",
+    "prisma": "^6.4.1",
+    "typescript": "^5.8.2"
+  }
+}
