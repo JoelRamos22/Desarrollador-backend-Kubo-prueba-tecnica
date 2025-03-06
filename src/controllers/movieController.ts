@@ -13,7 +13,7 @@ export const createMovie = async (req: Request, res: Response): Promise<void> =>
     }
     
     const movie = await prisma.movie.create({
-      data: movieData,
+      data: movieData,  
       include: {
         category: true
       }
@@ -35,10 +35,10 @@ export const createMovie = async (req: Request, res: Response): Promise<void> =>
 // Get all movies with filtering, pagination and sorting
 export const getMovies = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { title, categoryId, page = '1', limit = '10', sortBy = 'releaseDate', sortOrder = 'desc' } = req.query as unknown as MovieQuery;
+    const { title, categoryId, page = '1', limit = '5', sortBy = 'releaseDate', sortOrder = 'desc' } = req.query as unknown as MovieQuery;
     
     const pageNumber = Number(page) || 1;
-    const limitNumber = Number(limit) || 10;
+    const limitNumber = Number(limit) || 5;
     const skip = (pageNumber - 1) * limitNumber;
     
     // Build where clause

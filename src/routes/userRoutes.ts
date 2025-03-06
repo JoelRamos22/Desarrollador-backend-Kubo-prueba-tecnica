@@ -4,12 +4,12 @@ import { createUser, getUserById, getUsersWithWatchedMovies } from '../controlle
 const router = Router();
 
 // Create a new user
-router.post('/', createUser);
+router.post('/create-user', createUser);
 
 // Get users with watched movies
 router.get('/with-watched-movies', getUsersWithWatchedMovies);
 
 // Get user by ID with their watched movies
-router.get('/:id', getUserById);
+router.get('/watched-movies/:id', getUserById);
 
 export default router;

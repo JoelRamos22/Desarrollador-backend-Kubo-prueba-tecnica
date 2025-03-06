@@ -7,7 +7,7 @@ const router = Router();
 router.post('/', createMovie);
 
 // Get all movies with filtering, pagination and sorting
-router.get('/', getMovies);
+router.get('/movie-list', getMovies);
 
 // Get new movies (less than 3 weeks old)
 router.get('/new', getNewMovies);

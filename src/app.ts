@@ -7,7 +7,7 @@ import categoryRoutes from './routes/categoryRoutes';
 import { errorHandler } from './utils/errorHandler';
 
 const app: Application = express();
-const port = config.PORT || 3000;
+const port = config.PORT || 5000;
 
 // Middleware
 app.use(cors());
