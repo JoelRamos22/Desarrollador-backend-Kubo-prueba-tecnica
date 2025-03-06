@@ -1,0 +1,46 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:../scripts/movie-managemente.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+model Category {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  movies    Movie[]
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  username  String    @unique
+  email     String    @unique
+  password  String
+  watchedMovies UserMovie[]
+  createdAt DateTime @default(now())
+}
+
+model Movie {
+  id          Int         @id @default(autoincrement())
+  title       String
+  description String?
+  releaseDate DateTime
+  category    Category    @relation(fields: [categoryId], references: [id])
+  categoryId  Int
+  userMovies  UserMovie[]
+  createdAt   DateTime    @default(now())
+}
+
+model UserMovie {
+  id        Int      @id @default(autoincrement())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  movie     Movie    @relation(fields: [movieId], references: [id])
+  movieId   Int
+  watchedAt DateTime @default(now())
+
+  @@unique([userId, movieId])
+}
