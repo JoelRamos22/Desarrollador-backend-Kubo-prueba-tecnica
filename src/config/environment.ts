@@ -10,8 +10,8 @@ interface Config {
 
 export const config: Config = {
   NODE_ENV: process.env.NODE_ENV || 'development',
-  PORT: Number(process.env.PORT) || 3000,
-  DATABASE_URL: process.env.DATABASE_URL || 'file:../scripts/movie-management.db'
+  PORT: Number(process.env.PORT) || 5000,
+  DATABASE_URL: process.env.DATABASE_URL || 'postgresql://postgres.wmkvboyjvcrmnlpsjbmg:[boiLc4uHJdi0FxU8]@aws-0-us-west-1.pooler.supabase.com:6543/postgres?pgbouncer=true',
 };
 
 // Validate that required environment variables are set
