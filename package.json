@@ -16,7 +16,7 @@
   "description": "",
 "scripts": {
   "dev": "prisma generate && nodemon --exec ts-node src/server.ts",
-  "build": "prisma generate && tsc && npm run seed && npm run prisma:migrate",
+  "build": "rm -rf node_modules/.prisma && rm -rf prisma/generatedprisma generate && tsc && npm run seed && npm run prisma:migrate",
   "seed": "ts-node prisma/seed.ts",
   "start": "node dist/server.js",
   "prisma:generate": "prisma generate",
