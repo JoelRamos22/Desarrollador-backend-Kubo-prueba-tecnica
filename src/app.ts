@@ -7,7 +7,6 @@ import categoryRoutes from './routes/categoryRoutes';
 import { errorHandler } from './utils/errorHandler';
 
 const app: Application = express();
-const port = config.PORT || 300;
 
 // Middleware
 app.use(cors());
@@ -26,8 +25,5 @@ app.get('/health', (_req: Request, res: Response) => {
 // Error handling middleware
 app.use(errorHandler);
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
-
+// ❌ No uses app.listen() en Vercel
 export default app;
