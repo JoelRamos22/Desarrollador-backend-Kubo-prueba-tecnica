@@ -11,7 +11,7 @@ Este repositorio contiene la solución a las tareas planteadas en la prueba téc
 ## Contenido del repositorio
 
 ### 1. Modelo Relacional y Script de Base de Datos
-Puedes encontrar el modelo relacional de la base de datos y el script correspondiente en la carpeta `db`:
+Puedes encontrar el modelo relacional de la base de datos y el script correspondiente en la carpeta `docs`:
 
 - `movies_management_relational_model`
 - `movies_management_database`
