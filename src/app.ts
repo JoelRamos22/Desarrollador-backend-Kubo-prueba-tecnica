@@ -25,5 +25,13 @@ app.get('/health', (_req: Request, res: Response) => {
 // Error handling middleware
 app.use(errorHandler);
 
+// ✅ Si estamos en un entorno local, iniciamos el servidor normalmente
+if (process.env.NODE_ENV !== 'production') {
+    const port = config.PORT || 3000;
+    app.listen(port, () => {
+        console.log(`Server running on port ${port}`);
+    });
+}
+
 // ❌ No uses app.listen() en Vercel
 export default app;
