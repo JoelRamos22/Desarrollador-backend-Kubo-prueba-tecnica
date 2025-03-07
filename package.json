@@ -14,15 +14,15 @@
   },
   "homepage": "https://github.com/JoelRamos22/Desarrollador-backend-Kubo-prueba-tecnica#readme",
   "description": "",
-  "scripts": {
-    "dev": "nodemon --exec ts-node src/app.ts",
-    "build": "tsc && npm run prisma:generate && npm run prisma:migrate && npm run seed", 
-    "lint": "eslint src --ext .ts",
-    "seed": "ts-node prisma/seed.ts",
-    "prisma:generate": "prisma generate",
-    "postinstall": "prisma generate",
-    "prisma:migrate": "prisma migrate dev"
-  },
+"scripts": {
+  "dev": "prisma generate && nodemon --exec ts-node src/server.ts",
+  "build": "prisma generate && tsc && npm run seed && npm run prisma:migrate",
+  "seed": "ts-node prisma/seed.ts",
+  "start": "node dist/server.js",
+  "prisma:generate": "prisma generate",
+  "postinstall": "prisma generate",
+  "prisma:migrate": "prisma migrate deploy"
+},
   "dependencies": {
     "@prisma/client": "^6.4.1",
     "cors": "^2.8.5",
